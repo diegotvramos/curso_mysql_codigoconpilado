@@ -1,0 +1,22 @@
+
+
+
+// uniendo mas de 2 tablas. CONDIGOCOMPILADO 18/08/2021
+
+
+SELECT
+    nom_alu,
+    edad_alu,
+    sem_alu,
+    nom_c,
+    nom_p,
+    nom_m
+FROM
+    alumno
+INNER JOIN carrera ON alumno.clave_c1 = carrera.clave_c
+INNER JOIN alu_pro ON alu_pro.mat_alu1 = alumno.mat_alu
+INNER JOIN profesor ON profesor.clave_p = alu_pro.clave_p1
+INNER JOIN mat_alu ON mat_alu.mat_alu2 = alumno.mat_alu
+INNER JOIN materia ON materia.clave_m = mat_alu.clave_m1
+WHERE
+    edad_alu != 18
